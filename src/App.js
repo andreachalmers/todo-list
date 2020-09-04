@@ -1,11 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
+import TodoList from './features/todolist/Todolist';
+import { Header, Container } from 'semantic-ui-react';
 import './App.css';
+import 'semantic-ui-css/semantic.min.css'
 
 function App() {
   return (
     <div className="App">
+      <Container>
+        <Header as='h3' dividing>To-do list</Header>
+        <TodoList />
+      </Container>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
