@@ -6,20 +6,31 @@ import logo from '../../logo.svg';
 
 /* first time i am using important in my life 😭 */
 const ListWrapper = styled.div`
-  .item.todo {
+  .todolist .item.todo {
     display: flex !important;
     align-items: center !important;
   }
 
-  .todo__btn {
+  .todolist .todo__btn {
     margin-left: auto !important; 
+  }
+
+  .todolist .todo__input {
+    border-bottom: 0px deeppink;
+    width: 1px;
+    background: deeppink;
+  }
+  .todolist .todo__input:hover {
+    border-bottom: 2px solid deeppink;
+    width: 100px;
+    transition: border-bottom .1s ease .1s, width ease .2s;
   }
 `
 
 const TodoList = () => {
   return (
     <ListWrapper>
-      <List divided verticalAlign='middle' celled>
+      <List divided verticalAlign='middle' celled className="todolist">
         <List.Item className="todo" style={{ display: 'flex', alignItems: 'center' }}>
           <List.Content>
             <Icon className='plus' />
@@ -27,7 +38,7 @@ const TodoList = () => {
           </List.Content>
         </List.Item>
         <List.Item className="todo">
-          <List.Content className="inline"><CustomRadio /><Input transparent /></List.Content>
+          <List.Content className="inline"><Input transparent className="todo__input" /></List.Content>
           <List.Content floated='right' className="todo__btn">
             <Button icon='trash alternate outline'></Button>
           </List.Content>
